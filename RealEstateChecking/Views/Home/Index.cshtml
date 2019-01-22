@@ -1,0 +1,54 @@
+﻿@model Property
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
+
+<div class="col-md-4 col-md-offset-1 col-sm-6 col-sm-offset-3">
+    <div class="well">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <div class="form-group">
+                <label asp-for="Address">Address:</label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AgencyCode">AgencyCode:</label>
+                <input asp-for="AgencyCode" class="form-control" />
+                <span asp-validation-for="AgencyCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name">Name:</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Latitude">Latitude:</label>
+                <input asp-for="Latitude" class="form-control" />
+                <span asp-validation-for="Latitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Longitude">Longitude:</label>
+                <input asp-for="Longitude" class="form-control" />
+                <span asp-validation-for="Longitude" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-3">
+    <div class="well">
+        <h3>Result:</h3>
+        <div class="text-primary text-center">@ViewBag.UserMessage</div>
+    </div>
+</div>
